@@ -183,8 +183,8 @@ else
         // If you use a free trial subscription key, you shouldn't need to change
         // this region.
         var uriBase =
-            // "https://southeastasia.api.cognitive.microsoft.com/vision/v2.0/analyze";
-            "https://southeastasia.api.cognitive.microsoft.com/";
+            "https://southeastasia.api.cognitive.microsoft.com/vision/v2.0/analyze";
+            // "https://southeastasia.api.cognitive.microsoft.com/";
  
         // Request parameters.
         var params = {
