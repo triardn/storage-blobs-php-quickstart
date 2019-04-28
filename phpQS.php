@@ -47,7 +47,7 @@ $connectionString = "DefaultEndpointsProtocol=https;AccountName=ballstrikesubmis
 // Create blob client.
 $blobClient = BlobRestProxy::createBlobService($connectionString);
 
-$fileToUpload = "f3c707b4-403a-42c7-af2f-1a69aedd56ff.jpg";
+$fileToUpload = "imageku.jpeg";
 
 $blobURL = "";
 
@@ -97,7 +97,7 @@ if (!isset($_GET["Cleanup"])) {
 
         // List blobs.
         $listBlobsOptions = new ListBlobsOptions();
-        $listBlobsOptions->setPrefix("f3c707b4-403a-42c7-af2f-1a69aedd56ff");
+        $listBlobsOptions->setPrefix("imageku");
 
         echo "These are the blobs present in the container: ";
 
