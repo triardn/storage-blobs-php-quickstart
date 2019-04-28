@@ -189,7 +189,6 @@ else
         // Request parameters.
         var params = {
             "visualFeatures": "Categories,Description,Color",
-            "details": "",
             "language": "en",
         };
  
@@ -239,7 +238,7 @@ else
 </form>
 
 <input type="text" name="inputImage" id="inputImage"
-    value="<?=$blobURL;?>" hidden/>
+    value="<?=$blobURL;?>"/>
 <button onclick="processImage()">Start Analyzing</button>
 
 <br><br>
