@@ -119,7 +119,7 @@ if (!isset($_GET["Cleanup"])) {
 
         // send the right headers
         header("Content-Type: image/jpeg");
-        header("Content-Length: " . filesize($fileToUpload));
+        // header("Content-Length: " . filesize($fileToUpload));
 
         fpassthru($blob->getContentStream());
         echo "<br />";
