@@ -118,7 +118,7 @@ if (!isset($_GET["Cleanup"])) {
         $blob = $blobClient->getBlob($containerName, $fileToUpload);
 
         // send the right headers
-        header("Content-Type: image/jpeg");
+        // header("Content-Type: image/jpeg");
         // header("Content-Length: " . filesize($fileToUpload));
 
         fpassthru($blob->getContentStream());
