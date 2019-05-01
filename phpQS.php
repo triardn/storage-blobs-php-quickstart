@@ -91,9 +91,12 @@ if (!isset($_GET["Cleanup"])) {
         echo "<br />";
         
         $content = fopen($fileToUpload, "r");
+        
+        $options = new CreateBlobOptions();
+        $options->setBlobContentType("image/jpeg");
 
         //Upload blob
-        $blobClient->createBlockBlob($containerName, $fileToUpload, $content);
+        $blobClient->createBlockBlob($containerName, $fileToUpload, $content, $options);
 
         // List blobs.
         $listBlobsOptions = new ListBlobsOptions();
