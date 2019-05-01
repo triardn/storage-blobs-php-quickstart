@@ -39,7 +39,7 @@ use MicrosoftAzure\Storage\Blob\BlobRestProxy;
 use MicrosoftAzure\Storage\Common\Exceptions\ServiceException;
 use MicrosoftAzure\Storage\Blob\Models\ListBlobsOptions;
 use MicrosoftAzure\Storage\Blob\Models\CreateContainerOptions;
-// use MicrosoftAzure\Storage\Blob\Models\CreateBlobOptions;
+use MicrosoftAzure\Storage\Blob\Models\CreateBlobOptions;
 use MicrosoftAzure\Storage\Blob\Models\CreateBlockBlobOptions;
 use MicrosoftAzure\Storage\Blob\Models\PublicAccessType;
 
@@ -94,7 +94,7 @@ if (!isset($_GET["Cleanup"])) {
         
         $content = fopen($fileToUpload, "r");
         
-        $options = new CreateBlockBlobOptions();
+        $options = new CreateBlobOptions();
         $options->setContentType("image/jpeg");
 
         // Upload blob
