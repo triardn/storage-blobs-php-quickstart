@@ -39,7 +39,8 @@ use MicrosoftAzure\Storage\Blob\BlobRestProxy;
 use MicrosoftAzure\Storage\Common\Exceptions\ServiceException;
 use MicrosoftAzure\Storage\Blob\Models\ListBlobsOptions;
 use MicrosoftAzure\Storage\Blob\Models\CreateContainerOptions;
-use MicrosoftAzure\Storage\Blob\Models\CreateBlobOptions;
+// use MicrosoftAzure\Storage\Blob\Models\CreateBlobOptions;
+use MicrosoftAzure\Storage\Blob\Models\CreateBlockBlobOptions;
 use MicrosoftAzure\Storage\Blob\Models\PublicAccessType;
 
 // $connectionString = "DefaultEndpointsProtocol=https;AccountName=".getenv('ACCOUNT_NAME').";AccountKey=".getenv('ACCOUNT_KEY');
@@ -93,7 +94,7 @@ if (!isset($_GET["Cleanup"])) {
         
         $content = fopen($fileToUpload, "r");
         
-        $options = new CreateBlobOptions();
+        $options = new CreateBlockBlobOptions();
         $options->setContentType("image/jpeg");
 
         // Upload blob
@@ -101,7 +102,7 @@ if (!isset($_GET["Cleanup"])) {
 
         try {
             //Upload blob
-            $blobRestProxy->createBlockBlob("containername", $blob_name, $content, $options);
+            $blobRestProxy->createBlockBlob($containerName, $fileToUpload, $content, $options);
             echo "success";
         } catch(ServiceException $e){
             $code = $e->getCode();
