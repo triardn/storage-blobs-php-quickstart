@@ -95,9 +95,19 @@ if (!isset($_GET["Cleanup"])) {
         $options = new CreateBlobOptions();
         $options->setBlobContentType("image/jpeg");
 
-        //Upload blob
-        var_dump($blobClient->createBlockBlob($containerName, $fileToUpload, $content, $options));
+        // Upload blob
+        // var_dump($blobClient->createBlockBlob($containerName, $fileToUpload, $content, $options));
 
+        try {
+            //Upload blob
+            $blobRestProxy->createBlockBlob("containername", $blob_name, $content, $options);
+            echo "success";
+        } catch(ServiceException $e){
+            $code = $e->getCode();
+            $error_message = $e->getMessage();
+            echo $code.": ".$error_message."<br />";
+        }
+        
         // List blobs.
         $listBlobsOptions = new ListBlobsOptions();
         $listBlobsOptions->setPrefix("imageku");
