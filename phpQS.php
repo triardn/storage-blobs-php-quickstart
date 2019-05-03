@@ -94,15 +94,15 @@ if (!isset($_GET["Cleanup"])) {
         
         $content = fopen($fileToUpload, "r");
         
-        $options = new CreateBlobOptions();
-        $options->setContentType("image/jpeg");
+        // $options = new CreateBlobOptions();
+        // $options->setContentType("image/jpeg");
 
         // Upload blob
         // var_dump($blobClient->createBlockBlob($containerName, $fileToUpload, $content, $options));
 
         try {
             //Upload blob
-            $blobClient->createBlockBlob($containerName, $fileToUpload, $content, $options);
+            $blobClient->createBlockBlob($containerName, $fileToUpload, $content);
             echo "success";
         } catch(ServiceException $e){
             $code = $e->getCode();
