@@ -103,7 +103,7 @@ if (!isset($_GET["Cleanup"])) {
         try {
             //Upload blob
             $blobClient->createBlockBlob($containerName, $fileToUpload, $content);
-            echo "success";
+            // echo "success";
         } catch(ServiceException $e){
             $code = $e->getCode();
             $error_message = $e->getMessage();
@@ -129,14 +129,14 @@ if (!isset($_GET["Cleanup"])) {
         echo "<br />";
 
         // Get blob.
-        echo "This is the content of the blob uploaded: ";
-        $blob = $blobClient->getBlob($containerName, $fileToUpload);
+        // echo "This is the content of the blob uploaded: ";
+        // $blob = $blobClient->getBlob($containerName, $fileToUpload);
 
-        // send the right headers
-        // header("Content-Type: image/jpeg");
-        // header("Content-Length: " . filesize($fileToUpload));
+        // // send the right headers
+        // // header("Content-Type: image/jpeg");
+        // // header("Content-Length: " . filesize($fileToUpload));
 
-        fpassthru($blob->getContentStream());
+        // fpassthru($blob->getContentStream());
         echo "<br />";
     }
     catch(ServiceException $e){
