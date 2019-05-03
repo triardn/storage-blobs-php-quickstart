@@ -192,7 +192,7 @@ else
         // **********************************************
  
         // Replace <Subscription Key> with your valid subscription key.
-        var subscriptionKey = "73eb81500e5040fca54cde2f464f70bf`";
+        var subscriptionKey = "bf01bcb592914b01a62a5b17347272c9`";
  
         // You must use the same Azure region in your REST API method as you used to
         // get your subscription keys. For example, if you got your subscription keys
@@ -203,7 +203,7 @@ else
         // If you use a free trial subscription key, you shouldn't need to change
         // this region.
         var uriBase =
-            "https://westcentralus.api.cognitive.microsoft.com/vision/v2.0/analyze";
+            "https://southeastasia.api.cognitive.microsoft.com/vision/v2.0/analyze";
             // "https://southeastasia.api.cognitive.microsoft.com/";
  
         // Request parameters.
